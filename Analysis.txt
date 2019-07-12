@@ -1,0 +1,85 @@
+Analysis
+
+------------------------------------------------
+Task 0
+
+First it will take from the texts document the first record. O(1)
+Then, it will take the last record from the call document. O(1)
+Finally it will print out both first text record and last call record. O( 1 + 1 )
+
+Worse case O(1 + 1 + 1 + 1)
+Aprox case O( 1 )
+
+------------------------------------------------
+
+Task 1
+
+First it creates an array to storage the number. O( 1 )
+Second, it starts a for loop for the texts document and if the number sending and the number
+receiving are not in the storage created before, then it will append the number. O(n ( k(1) + m(1)) )
+Third, it does the same for the calls document. O(n ( k(1) + m(1) ))
+Finally, it will print out the length of the array which is the amount of different phone numbers. O( 1 )
+
+Worse case O( 1 + (n (k(1) + m(1)) + (n (k(1) + m(1)))) +1)
+Aprox case O(n*m)
+
+-------------------------------------------------
+
+Task 2
+
+First we create a dictionary to keep track of every number time on the phone. The key will be the number
+and the value the time on the phone O( 1 )
+Second, it starts a for loop to go over all phones in the calls document. Selecting the phone calling and
+the phone receiving. If the phone is not in the dictionary it will add it, if it is in the dictionary it
+will sum the times. This step is going to repeat for the phone receiving and the phone calling.
+Third, it will get the max value of time on the phone and the phone from the dictionary. O( n + 2 + 2 + 1 + 2 +1)
+
+***For a search in a dictionary the time complexity can be either O(n) or O(1).
+
+Finally, it will print out the phone and the time (max).
+
+
+Worse case O( 2 + n + 2 + 2+ 1 + 2 + 1)
+Aprox case O(n)
+
+--------------------------------------------------
+
+Task 3
+
+First, it will create an array for the area codes, a variable for the calls made, and a variable
+for how many Bangalore to Bangalore call were made. O( 3 )
+
+Second, it will use a for loop to go over the calls record. and putting into a variable the number that is calling.
+If the call was made from a number with the are code of Bangalore, then it will count as a call made and will take
+the receiving number to compare. If the receiving also have the area code of Bangalore then it will count as a Bangalore
+to Bangalore call. If not, it will go through the cases specified in the requirements.
+O(n + 9 + ( m + 1 ) + 1 + 1 + k + 1 + 1 + j)
+
+Third, for part A it will print all the area codes of the numbers called by people in Bangalore in
+lexicographic order sorted. O((n log n) + n + 1)
+
+Finally, for part B it will calculate the percent of the calls made to Bangalore by Bangalore and print it out
+O( 1 + 1 )
+
+Worse case O(3 + (n + 9 + ( m + 1 ) + 1 + 1 + k + 1 + 1 + j) + (n log n) + n + 1) + ( 1 + 1 )
+Aprox case O(n log n)
+
+
+--------------------------------------------------
+
+Task 4
+
+First, it will create 3 arrays to storage the information to compare. O( 1 + 1 + 1 )
+
+Second, it will start a for loop to storage all the numbers that received a call before.
+Another for loop will be created to storage numbers that interacted before through text messages. O( n + n( m + j )
+
+Third, it will start another for loop to check if the number from the record have ever received a call or
+interacted through text messages. Then if not, add it to the telemarketers record. O( n ( 1 + ( f + k) + 1 ) )
+
+Finally, it will organize the telemarketers in lexicographic order with a sort and delete the repeated ones. Then
+print them. O((n log n) + n  + n)
+
+worse case O(1 + 1 + 1 + ( n + n( m + j ) ) + ((n log n) + n  + n) )
+Aprox case O( n log n)
+
